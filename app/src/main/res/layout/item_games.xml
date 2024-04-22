@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="games"
+            type="com.thiago.games_java.service.model.GamesItem"
+            />
+        <variable
+            name="listener"
+            type="com.thiago.games_java.view.GamesClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gamesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:shadowRadius="10"
+        android:layout_margin="15dp"
+        android:onClick="@{listener::onClick}"
+        android:tag="@{games.title}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/gamesImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="center"
+            android:imageUrl="@{games.imgUrl}"
+            android:src="@mipmap/ic_launcher_round"
+            />
+
+        <TextView
+            android:id="@+id/gamesName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#afff"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="210dp"
+            android:text="@{games.title}"
+             />
+
+    </androidx.cardview.widget.CardView>
+</layout>

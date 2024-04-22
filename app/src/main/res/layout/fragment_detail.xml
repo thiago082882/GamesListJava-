@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="games"
+            type="com.thiago.games_java.service.model.GamesItem"/>
+
+        <variable
+            name="palette"
+            type="com.thiago.games_java.service.model.GamePalette" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/GamesLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{palette.color}"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".view.DetailFragment">
+
+        <ImageView
+            android:id="@+id/gamesImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imageUrl="@{games.imgUrl}"
+            android:minHeight="200dp"
+            android:scaleType="center" />
+
+        <TextView
+            android:id="@+id/gamesName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@{games.title}" />
+
+        <TextView
+            android:id="@+id/gamesDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@{games.shortDescription}" />
+
+        <TextView
+            android:id="@+id/gamesYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_margin="4dp"
+            android:text="@{String.valueOf(games.year)}" />
+
+
+    </LinearLayout>
+</layout>
